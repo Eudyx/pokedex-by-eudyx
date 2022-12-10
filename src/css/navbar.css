@@ -1,0 +1,86 @@
+.navBar {
+    width: 80%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.logo {
+    width: 33%;
+}
+
+.navBar img {
+    width: 100%;
+}
+
+.search input{
+    height: 40px;
+    width: 300px;
+    border: solid 1.5px #d47171a2;
+    border-radius: 6px 0 0 6px;
+    outline: 0;
+    padding: 0 10px 0 10px;
+    font-weight: 600;
+    color: #7e3939;
+}
+
+.navBar button {
+    height: 43px;
+    width: 80px;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #C61A1A;
+    cursor: pointer;
+}
+
+.navBar button:hover {
+    transition: all 0.8s ease;
+    background-color: #800e0e;
+}
+
+.navBar button img {
+    background-color: transparent;
+}
+
+.serachIcon {
+    height: 70%;
+    margin-top: 5px;
+    background-color: #C61A1A;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 950px) {
+    .navBar {
+        flex-wrap: wrap;
+        height: 300px;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 80%;
+    }
+
+    .search {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .logo {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .search {
+        width: 80%;
+        margin: auto;
+    }
+}

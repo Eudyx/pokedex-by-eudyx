@@ -1,0 +1,25 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 16rem;
+}
+
+.pagination {
+    background-color: #C61A1A;
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 8px 4px 8px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.pagination:hover {
+    background-color: #7e3939;
+}

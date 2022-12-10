@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.card {
+    transition: all 0.5s ease;
+    background-color: #fff;
+    min-width: 17rem;
+    height: 22rem;
+    border-radius: 35px 8px 35px 8px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.26);
+    margin: 4rem;
+}
+
+.upper-part {
+    background-color: #fff;
+    width: 100%;
+    height: 12rem;
+    border-radius: 35px 8px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upper-part img {
+    height: 90%;
+}
+
+.middle-part {
+    background-color: black;
+    height: 0.7rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.middle-ball {
+    background-color: black;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    bottom: 14px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.white-ball {
+    background-color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+/*Info section*/
+
+.name {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: #6D7B77;
+}
+
+.stats-container {
+    height: 119px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stats-container span {
+    margin-left: 3px;
+    color: #6D7B77;
+}
+
+.stat {
+    column-count: 2;
+}
+
+.stat div {
+    margin: 0 10px 20px 10px
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link label {
+    color: black;
+}
+
+.card:hover {
+    transform: scale(1.07) rotate(2deg);
+}
