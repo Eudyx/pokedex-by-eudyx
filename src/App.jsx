@@ -12,8 +12,9 @@ function App() {
     <HashRouter >
       <div style={{margin: 'auto'}}>
         <Routes>
-          <Route exact path="/" element={<ShowPokemons />} />
-          <Route path={'/:name'} element={<Details />} errorElement={<ErrorPage />} />
+          <Route path="/" element={<ShowPokemons />} />
+          <Route path={'/:name'} element={<Details />} />
+          <Route path={'*'} element={<ErrorPage />} />
         </Routes>
       </div>
     </HashRouter>

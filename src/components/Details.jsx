@@ -78,7 +78,7 @@ const Details = () => {
       </div>
       <div className='section'>
         <div className='stats-details'>
-          <h1 style={color}>Stats</h1>
+          <h1 className='stats-details-title' style={color}>Stats</h1>
           <br/>
           <div className='stat-bar'>
             <h2>HP</h2>
@@ -115,8 +115,13 @@ const Details = () => {
         </div>
 
         <div className='moves'>
-          <div className='moves-columns'>
-            {pokemon.moves.map((x, index) => <div className='move' key={index}>{x.move.name}</div>)}
+          <div style={{width: "100%", marginBottom: "2rem"}}>
+            <h1 className='stats-details-title' style={color}>Stats</h1>
+          </div>
+          <div>
+            <div className='moves-columns'>
+              {pokemon.moves.map((x, index) => <div className='move' key={index}>{x.move.name}</div>)}
+            </div>
           </div>
         </div>
       </div >

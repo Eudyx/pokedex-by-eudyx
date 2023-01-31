@@ -27,9 +27,9 @@ const Navbar = () => {
         </div>
         <form onSubmit={pokemonFilter}>
           <div className='search'>
-            <input type="text" name="search-field" onChange={onChangeText} />
+            <input type="text" name="search-field" alt="search-field" onChange={onChangeText} />
             <button type='submit' name="search">
-              <img src='./searchIcon.svg' className='serachIcon' />
+              <img src='./searchIcon.svg' className='serachIcon' alt="search" />
             </button>
           </div>
         </form>

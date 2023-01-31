@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { useTypeColor } from "../hooks/useTypeColor";
 import { useImage } from "../hooks/useImage";
 
@@ -10,8 +9,6 @@ const Card = ({ pokemons }) => {
   const [pokemon, setPokemon] = useState();
   const [color, getColor] = useTypeColor();
   const [img, setImage] = useImage();
-
-  const dispatch = useDispatch();
 
   const getThisPokemon = () => {
     axios.get(`${url + pokemons.name}`).then((res) => {

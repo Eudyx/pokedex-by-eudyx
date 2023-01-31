@@ -95,6 +95,8 @@
     color: black;
 }
 
-.card:hover {
-    transform: scale(1.07) rotate(2deg);
+@media (min-width: 800px) {
+    .card:hover {
+        transform: scale(1.07) rotate(2deg);
+    }
 }
