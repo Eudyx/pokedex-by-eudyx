@@ -116,7 +116,7 @@ const Details = () => {
 
         <div className='moves'>
           <div style={{width: "100%", marginBottom: "2rem"}}>
-            <h1 className='stats-details-title' style={color}>Stats</h1>
+            <h1 className='stats-details-title' style={color}>Movements</h1>
           </div>
           <div>
             <div className='moves-columns'>
