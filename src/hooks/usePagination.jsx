@@ -4,7 +4,7 @@ export const usePagination = () => {
         const res = [];
         const maxPages = 5;
 
-        for (let i = 1; i < numberOfPages; i++) res.push(i);
+        for (let i = 1; i <= numberOfPages; i++) res.push(i);
 
         return res.filter(x => 
           x >= currentPage - 1 && x < currentPage +

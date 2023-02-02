@@ -27,12 +27,16 @@ const Pokemons = () => {
   const filPokes = useSelector(filteredPokes);
 
   useEffect(() => {
-    dispatch(getAllPokemonsThunk(url, pokePage));
+    dispatch(getAllPokemonsThunk(url));
   }, []);
 
   useEffect(() => {
     setRequest(!filPokes?.length ? pokemons : filPokes);
-    dispatch(getNumberOfpages(Math.round(request.length / pokePage)));
+    dispatch(getNumberOfpages((request.length / pokePage) > Math.round(request.length / pokePage) ?
+      Math.round(request.length / pokePage) + 1
+      :
+      Math.round(request.length / pokePage)
+    ));
     getPokemonsPerPages(request, pokePage, numberOfPages);
   }, [request, filPokes, pokemons, numberOfPages]);
 
@@ -41,7 +45,6 @@ const Pokemons = () => {
       {pageOfPokemons?.length
           ? pageOfPokemons[currentPage].map((x) => <Card key={x.name} pokemons={x} />)
           : null}
-      {/* {pokemons.results?.length ? console.log(pokemons.results) : null} */}
     </div>
   );
 };
