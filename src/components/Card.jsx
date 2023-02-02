@@ -29,7 +29,6 @@ const Card = ({ pokemons }) => {
           {pokemon != undefined ? (
             <img src={img} alt={pokemon.name} />
           ) : null}
-          {pokemon != undefined ? console.log() : null}
         </div>
         {/*Middle part design*/}
         <div className="middle-part">

@@ -1,23 +1,14 @@
 import { pages, cPage, getCurrentPage } from "../features/pokemonsSlice";
 import { useSelector, useDispatch } from "react-redux";
 import '../css/pagination.css';
+import { usePagination } from "../hooks/usePagination";
 
 const Pagination = () => {
     const dispatch = useDispatch();
     const currentPage = useSelector(cPage);
     const numberOfPages = useSelector(pages);
+    const [getPagination] = usePagination(); 
 
-    const getPagination = () => {
-        const res = [];
-        const maxPages = 5;
-
-        for (let i = 1; i < numberOfPages; i++) res.push(i);
-
-        return res.filter(x => 
-          x >= currentPage - 1 && x < currentPage +
-          (currentPage > 1 ? maxPages - 1 : maxPages)
-        );
-    }
 
     const changePage = (e) => {
       e.preventDefault();
@@ -26,8 +17,8 @@ const Pagination = () => {
 
   return (
     <div className='pagination-container'>
-        {getPagination()?.length ?
-        getPagination().map(x => <div className='pagination' style={{
+        {getPagination(currentPage, numberOfPages)?.length ?
+        getPagination(currentPage, numberOfPages).map(x => <div className='pagination' style={{
           backgroundColor: currentPage == x ? "black" : null,
           display: x == 0 ? "none" : null
         }} key={x} onClick={changePage}>{x}</div>) : null}
