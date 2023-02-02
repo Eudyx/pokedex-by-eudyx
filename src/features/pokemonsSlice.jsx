@@ -4,10 +4,10 @@ import axios from "axios";
 const pokemonsSlice = createSlice({
     name: 'pokemons',
     initialState: {
-        pokemonsList: {},
+        pokemonsList: {}, // All the pokemons
         filteredPokemons: {},
-        pokePerPage: 12,
-        pokePages: 0,
+        pokePerPage: 12, // Quantity of pokemons per pages
+        pokePages: 0, // Number of total pages
         currentPage: 1
     },
     reducers: {
