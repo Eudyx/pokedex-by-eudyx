@@ -11,10 +11,11 @@ import {
   pokes,
   filteredPokes
 } from "../features/pokemonsSlice";
+import { usePokemosPerPages } from "../hooks/usePokemosPerPages";
 
 const Pokemons = () => {
   const url = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
-  const [pageOfPokemons, setPageOfPokemons] = useState([]);
+  const [pageOfPokemons, getPokemonsPerPages] = usePokemosPerPages([]);
   const [request, setRequest] = useState([]);
 
   //Redux
@@ -25,20 +26,6 @@ const Pokemons = () => {
   const currentPage = useSelector(cPage) - 1;
   const filPokes = useSelector(filteredPokes);
 
-  //slice the request of pokemons in N numbers of pages with N numbers of pokemons
-  const getPokemonsPerPages = (pokemons, pokePage) => {
-    let res = [];
-    let counter = 0;
-
-    if(pokemons?.length){
-      for (let i = 0; i < numberOfPages; i++) {
-        res.push(pokemons.slice(counter, counter += pokePage));
-      }
-    }
-
-    setPageOfPokemons(res);
-  };
-
   useEffect(() => {
     dispatch(getAllPokemonsThunk(url, pokePage));
   }, []);
@@ -46,7 +33,7 @@ const Pokemons = () => {
   useEffect(() => {
     setRequest(!filPokes?.length ? pokemons : filPokes);
     dispatch(getNumberOfpages(Math.round(request.length / pokePage)));
-    getPokemonsPerPages(request, pokePage);
+    getPokemonsPerPages(request, pokePage, numberOfPages);
   }, [request, filPokes, pokemons, numberOfPages]);
 
   return (
