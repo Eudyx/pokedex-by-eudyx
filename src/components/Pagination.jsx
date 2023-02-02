@@ -9,13 +9,13 @@ const Pagination = () => {
 
     const getPagination = () => {
         const res = [];
-        const maxPages = 4;
+        const maxPages = 5;
 
-        for (let i = 0; i < numberOfPages; i++) res.push(i);
+        for (let i = 1; i < numberOfPages; i++) res.push(i);
 
         return res.filter(x => 
-          x >= currentPage - 1 && x < currentPage + 
-          (currentPage > 1 ? maxPages : maxPages + 1)
+          x >= currentPage - 1 && x < currentPage +
+          (currentPage > 1 ? maxPages - 1 : maxPages)
         );
     }
 
